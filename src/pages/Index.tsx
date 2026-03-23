@@ -1,16 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/landing/Header";
+import HeroSection from "@/components/landing/HeroSection";
+import AudienceSection from "@/components/landing/AudienceSection";
+import HowItWorksSection from "@/components/landing/HowItWorksSection";
+import BenefitsSection from "@/components/landing/BenefitsSection";
+import SecuritySection from "@/components/landing/SecuritySection";
+import TestimonialsSection from "@/components/landing/TestimonialsSection";
+import PricingSection from "@/components/landing/PricingSection";
+import FAQSection from "@/components/landing/FAQSection";
+import FinalCTASection from "@/components/landing/FinalCTASection";
+import Footer from "@/components/landing/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen">
+      <Header />
+      <HeroSection />
+      <AudienceSection />
+      <HowItWorksSection />
+      <BenefitsSection />
+      <SecuritySection />
+      <TestimonialsSection />
+      <PricingSection />
+      <FAQSection />
+      <FinalCTASection />
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
