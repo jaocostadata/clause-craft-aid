@@ -1,0 +1,94 @@
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const navLinks = [
+  { label: "Como funciona", href: "#como-funciona" },
+  { label: "Benefícios", href: "#beneficios" },
+  { label: "Para quem?", href: "#para-quem" },
+  { label: "Planos", href: "#planos" },
+  { label: "FAQ", href: "#faq" },
+];
+
+const Header = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  return (
+    <>
+      {/* Top banner */}
+      <div className="bg-light-gray text-center py-2 px-4 text-xs md:text-sm font-body text-muted-foreground">
+        Ferramenta feita por e para advogados – contratos atualizados com as melhores práticas do mercado.
+      </div>
+
+      {/* Main header */}
+      <header className="sticky top-0 z-50 bg-navy border-b border-gold/20">
+        <div className="container mx-auto flex items-center justify-between py-3 px-4">
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-2">
+            <span className="font-display text-xl md:text-2xl font-bold text-navy-foreground">
+              Contract<span className="text-cta">.</span><span className="text-gold">fy</span>
+            </span>
+          </a>
+
+          {/* Desktop nav */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-body font-medium text-navy-foreground/80 hover:text-gold transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* CTA */}
+          <div className="hidden lg:block">
+            <a
+              href="#testar"
+              className="inline-flex items-center px-6 py-2.5 rounded-md bg-cta text-cta-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity"
+            >
+              Testar grátis por 7 dias
+            </a>
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            className="lg:hidden text-navy-foreground"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Menu"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <div className="lg:hidden bg-navy border-t border-gold/20 px-4 pb-4">
+            <nav className="flex flex-col gap-3 pt-2">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-body text-navy-foreground/80 hover:text-gold py-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="#testar"
+                className="mt-2 w-full text-center py-3 rounded-md bg-cta text-cta-foreground font-body font-semibold text-sm"
+                onClick={() => setMobileOpen(false)}
+              >
+                Testar grátis
+              </a>
+            </nav>
+          </div>
+        )}
+      </header>
+    </>
+  );
+};
+
+export default Header;
