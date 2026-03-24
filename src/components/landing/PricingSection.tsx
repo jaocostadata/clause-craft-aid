@@ -12,14 +12,14 @@ const plans = [
   {
     name: "Pro",
     desc: "Para advogados autônomos",
-    price: "Em breve",
+    price: "R$ 37/mês",
     features: ["1 usuário", "50 contratos por mês", "Todos os modelos", "Exportação PDF e Word"],
     highlight: false,
   },
   {
     name: "Escritório",
     desc: "Para pequenos e médios escritórios",
-    price: "Em breve",
+    price: "R$ 297/mês",
     features: ["Até 5 usuários", "300 contratos por mês", "Todos os modelos", "Suporte prioritário"],
     highlight: true,
   },
@@ -48,7 +48,7 @@ const PricingSection = () => {
           Comece gratuitamente e escale conforme sua necessidade.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((plan, i) => (
             <motion.div
               key={i}

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { FileCheck, Settings2, FileOutput } from "lucide-react";
-
+import { FileCheck, Settings2, FileOutput, Share2 } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -17,12 +16,12 @@ const HeroSection = () => {
             transition={{ duration: 0.7 }}
             className="max-w-2xl"
           >
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-foreground leading-tight mb-6">
-              Contratos prontos em minutos, com segurança de horas de escritório.
-            </h1>
             <p className="font-body text-navy-foreground text-base md:text-lg mb-4 leading-relaxed font-semibold">
               Advogado, a ferramenta que você sempre quis agora está no seu bolso e a dois cliques de distância de você.
             </p>
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-foreground leading-tight mb-6">
+              Contratos prontos em minutos, com segurança de horas de escritório.
+            </h1>
             <p className="font-body text-navy-foreground/70 text-base md:text-lg mb-8 leading-relaxed">
               A Contract.fy automatiza a criação de contratos para advogados, reduzindo erros, padronizando cláusulas e liberando seu tempo para o que realmente importa: atender seus clientes.
             </p>
@@ -33,6 +32,7 @@ const HeroSection = () => {
                 { icon: FileCheck, text: "Modelos inteligentes atualizados" },
                 { icon: Settings2, text: "Cláusulas personalizáveis em poucos cliques" },
                 { icon: FileOutput, text: "Exportação profissional em PDF e Word" },
+                { icon: Share2, text: "Compartilhe contratos direto pelo WhatsApp" },
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-navy-foreground/90 font-body text-sm md:text-base">
                   <item.icon className="text-gold shrink-0" size={20} />
@@ -57,7 +57,7 @@ const HeroSection = () => {
               </a>
             </div>
             <p className="mt-4 text-navy-foreground/50 font-body text-xs">
-              Sem cartão de crédito. Cancele quando quiser.
+              Cancele quando quiser.
             </p>
           </motion.div>
         </div>
@@ -75,10 +75,10 @@ const HeroSection = () => {
               <div className="flex items-center gap-1.5 mb-2">
                 <div className="w-2.5 h-2.5 rounded-full bg-cta" />
                 <div className="w-2.5 h-2.5 rounded-full bg-gold" />
-                <div className="w-2.5 h-2.5 rounded-full bg-primary-foreground/30" />
+                <div className="w-2.5 h-2.5 rounded-full bg-navy-foreground/30" />
               </div>
-              <div className="bg-primary-foreground rounded-sm p-4 space-y-3">
-                <div className="h-3 w-3/4 bg-navy/80 rounded" />
+              <div className="bg-background rounded-sm p-4 space-y-3">
+                <div className="h-3 w-3/4 bg-navy rounded" />
                 <div className="h-2 w-full bg-navy/20 rounded" />
                 <div className="h-2 w-5/6 bg-navy/20 rounded" />
                 <div className="h-8 w-1/3 bg-cta rounded mt-4" />
@@ -90,8 +90,8 @@ const HeroSection = () => {
             </div>
             {/* Phone mockup */}
             <div className="w-32 mx-auto bg-navy rounded-xl p-2 shadow-2xl">
-              <div className="bg-primary-foreground rounded-lg p-2 space-y-2">
-                <div className="h-2 w-2/3 bg-navy/80 rounded mx-auto" />
+              <div className="bg-background rounded-lg p-2 space-y-2">
+                <div className="h-2 w-2/3 bg-navy rounded mx-auto" />
                 <div className="h-1.5 w-full bg-navy/15 rounded" />
                 <div className="h-1.5 w-4/5 bg-navy/15 rounded" />
                 <div className="h-5 w-2/3 bg-cta rounded mx-auto mt-2" />

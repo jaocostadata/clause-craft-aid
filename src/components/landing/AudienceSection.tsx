@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { User, Users, Building2, Calculator } from "lucide-react";
+import { User, Users, Building2 } from "lucide-react";
 
 const cards = [
   {
@@ -17,11 +17,6 @@ const cards = [
     title: "Departamentos jurídicos",
     desc: "Acelere a revisão de contratos recorrentes com templates aprovados pela diretoria.",
   },
-  {
-    icon: Calculator,
-    title: "Consultores e contadores",
-    desc: "Documente seus serviços com contratos profissionais, sem depender de terceiros.",
-  },
 ];
 
 const AudienceSection = () => {
@@ -37,7 +32,7 @@ const AudienceSection = () => {
           Feita sob medida para profissionais do Direito
         </motion.h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, i) => (
             <motion.div
               key={i}
