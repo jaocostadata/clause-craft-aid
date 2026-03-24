@@ -22,7 +22,7 @@ const FinalCTASection = () => {
           href="#testar"
           className="inline-flex items-center justify-center px-10 py-4 rounded-md bg-cta text-cta-foreground font-body font-bold text-lg hover:opacity-90 transition-opacity"
         >
-          🔒 Quero testar a Contract.fy agora
+          Quero testar a Contract.fy agora
         </a>
         <p className="font-body text-navy-foreground/50 text-xs mt-4">
           Teste gratuito, sem compromisso.

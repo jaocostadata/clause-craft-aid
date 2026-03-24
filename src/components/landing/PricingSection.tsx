@@ -3,24 +3,31 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Individual",
-    desc: "Ideal para advogados autônomos",
+    name: "Teste Free",
+    desc: "Experimente sem compromisso",
+    price: "Grátis",
+    features: ["1 usuário", "3 contratos básicos", "Válido por 7 dias"],
+    highlight: false,
+  },
+  {
+    name: "Pro",
+    desc: "Para advogados autônomos",
     price: "Em breve",
-    features: ["Até 10 contratos/mês", "Modelos essenciais", "Exportação PDF e Word", "Suporte por e-mail"],
+    features: ["1 usuário", "50 contratos por mês", "Todos os modelos", "Exportação PDF e Word"],
     highlight: false,
   },
   {
     name: "Escritório",
     desc: "Para pequenos e médios escritórios",
     price: "Em breve",
-    features: ["Até 5 usuários", "Contratos ilimitados", "Todos os modelos", "Suporte prioritário", "Onboarding personalizado"],
+    features: ["Até 5 usuários", "300 contratos por mês", "Todos os modelos", "Suporte prioritário"],
     highlight: true,
   },
   {
     name: "Corporativo",
     desc: "Para times jurídicos maiores",
     price: "Sob consulta",
-    features: ["Usuários ilimitados", "Integrações sob demanda", "Atendimento dedicado", "SLA customizado"],
+    features: ["Usuários ilimitados", "Integrações sob demanda", "Atendimento dedicado"],
     highlight: false,
   },
 ];

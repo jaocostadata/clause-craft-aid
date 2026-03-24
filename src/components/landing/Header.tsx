@@ -14,11 +14,6 @@ const Header = () => {
 
   return (
     <>
-      {/* Top banner */}
-      <div className="bg-light-gray text-center py-2 px-4 text-xs md:text-sm font-body text-muted-foreground">
-        Ferramenta feita por e para advogados – contratos atualizados com as melhores práticas do mercado.
-      </div>
-
       {/* Main header */}
       <header className="sticky top-0 z-50 bg-navy border-b border-gold/20">
         <div className="container mx-auto flex items-center justify-between py-3 px-4">
