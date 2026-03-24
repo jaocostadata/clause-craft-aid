@@ -97,3 +97,13 @@ const PricingSection = () => {
 };
 
 export default PricingSection;
+              </a>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PricingSection;
