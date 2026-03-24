@@ -68,35 +68,15 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-full max-w-md space-y-6"
+            className="w-full max-w-md"
           >
-            {/* Laptop mockup */}
-            <div className="bg-navy rounded-lg p-3 shadow-2xl">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-cta" />
-                <div className="w-2.5 h-2.5 rounded-full bg-gold" />
-                <div className="w-2.5 h-2.5 rounded-full bg-navy-foreground/30" />
-              </div>
-              <div className="bg-background rounded-sm p-4 space-y-3">
-                <div className="h-3 w-3/4 bg-navy rounded" />
-                <div className="h-2 w-full bg-navy/20 rounded" />
-                <div className="h-2 w-5/6 bg-navy/20 rounded" />
-                <div className="h-8 w-1/3 bg-cta rounded mt-4" />
-                <div className="grid grid-cols-2 gap-2 mt-3">
-                  <div className="h-12 bg-light-gray rounded border border-border" />
-                  <div className="h-12 bg-light-gray rounded border border-border" />
-                </div>
-              </div>
-            </div>
-            {/* Phone mockup */}
-            <div className="w-32 mx-auto bg-navy rounded-xl p-2 shadow-2xl">
-              <div className="bg-background rounded-lg p-2 space-y-2">
-                <div className="h-2 w-2/3 bg-navy rounded mx-auto" />
-                <div className="h-1.5 w-full bg-navy/15 rounded" />
-                <div className="h-1.5 w-4/5 bg-navy/15 rounded" />
-                <div className="h-5 w-2/3 bg-cta rounded mx-auto mt-2" />
-              </div>
-            </div>
+            <img
+              src={heroMockup}
+              alt="Contract.fy aplicação em notebook e celular"
+              width={1024}
+              height={768}
+              className="w-full h-auto rounded-lg shadow-2xl"
+            />
           </motion.div>
         </div>
       </div>
