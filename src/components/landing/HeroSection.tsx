@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FileCheck, Settings2, FileOutput, Share2 } from "lucide-react";
+import heroMockup from "@/assets/hero-mockup-app.jpg";
 
 const HeroSection = () => {
   return (
