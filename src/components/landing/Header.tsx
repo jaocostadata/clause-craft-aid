@@ -19,8 +19,8 @@ const Header = () => {
         <div className="container mx-auto flex items-center justify-between py-3 px-4">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <span className="font-display text-xl md:text-2xl font-bold text-navy-foreground">
-              Contract<span className="text-cta">.</span><span className="text-gold">fy</span>
+            <span className="font-display text-xl md:text-2xl font-bold text-gold">
+              Contract<span className="text-cta">.</span>fy
             </span>
           </a>
 
