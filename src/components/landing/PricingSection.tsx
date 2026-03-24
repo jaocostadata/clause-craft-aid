@@ -79,7 +79,24 @@ const PricingSection = () => {
                 ))}
               </ul>
               <a
-                href="#testar"
+                href={plan.price === "Sob consulta" ? "#contato" : "#testar"}
+                className={`w-full text-center py-3 rounded-md font-body font-semibold text-sm transition-opacity hover:opacity-90 ${
+                  plan.highlight
+                    ? "bg-cta text-cta-foreground"
+                    : "bg-navy text-navy-foreground"
+                }`}
+              >
+                {plan.price === "Sob consulta" ? "Falar com especialista" : "Começar teste grátis"}
+              </a>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PricingSection;
                 className={`w-full text-center py-3 rounded-md font-body font-semibold text-sm transition-opacity hover:opacity-90 ${
                   plan.highlight
                     ? "bg-cta text-cta-foreground"
