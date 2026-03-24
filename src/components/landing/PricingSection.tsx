@@ -79,7 +79,7 @@ const PricingSection = () => {
                 ))}
               </ul>
               <a
-                href="#testar"
+                href={plan.price === "Sob consulta" ? "#contato" : "#testar"}
                 className={`w-full text-center py-3 rounded-md font-body font-semibold text-sm transition-opacity hover:opacity-90 ${
                   plan.highlight
                     ? "bg-cta text-cta-foreground"

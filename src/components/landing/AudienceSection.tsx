@@ -36,11 +36,15 @@ const AudienceSection = () => {
           {cards.map((card, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, rotateX: 10 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+              transition={{ delay: i * 0.15, duration: 0.6, type: "spring" }}
+              whileHover={{ y: -8, rotateY: 3, scale: 1.02 }}
+              className={`bg-card rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow ${
+                i === 2 ? "sm:col-span-2 lg:col-span-1 sm:max-w-sm sm:mx-auto lg:max-w-none" : ""
+              }`}
+              style={{ perspective: 800, transformStyle: "preserve-3d" }}
             >
               <card.icon className="text-gold mb-4" size={32} />
               <h3 className="font-display text-lg font-semibold text-foreground mb-2">{card.title}</h3>
