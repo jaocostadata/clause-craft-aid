@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FileCheck, Settings2, FileOutput } from "lucide-react";
-import heroMockup from "@/assets/hero-mockup.png";
+
 
 const HeroSection = () => {
   return (
