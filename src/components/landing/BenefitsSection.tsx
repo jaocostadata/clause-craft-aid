@@ -5,7 +5,7 @@ const benefits = [
   {
     icon: Clock,
     title: "Produtividade real",
-    desc: "Reduza drasticamente o tempo gasto em contratos recorrentes.",
+    desc: "Gere contratos até 10 vezes mais rápido com nossa ferramenta.",
   },
   {
     icon: ShieldCheck,
