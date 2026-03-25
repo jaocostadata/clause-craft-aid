@@ -61,7 +61,7 @@ const BenefitsSection = () => {
             className="flex flex-col gap-6"
           >
             <div className="bg-navy-foreground/5 border border-gold/20 rounded-lg p-8 text-center">
-              <span className="font-display text-5xl md:text-6xl font-bold text-gold">70%</span>
+              <span className="font-display text-5xl md:text-6xl font-bold text-gold">90%</span>
               <p className="font-body text-sm text-navy-foreground/70 mt-2">menos tempo em contratos recorrentes</p>
             </div>
             <div className="bg-navy-foreground/5 border border-gold/20 rounded-lg p-8 text-center">

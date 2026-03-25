@@ -20,7 +20,7 @@ const plans = [
     name: "Escritório",
     desc: "Para pequenos e médios escritórios",
     price: "R$ 297/mês",
-    features: ["Até 5 usuários", "300 contratos por mês", "Todos os modelos", "Suporte prioritário"],
+    features: ["Até 5 usuários", "400 contratos por mês", "Todos os modelos", "Suporte prioritário"],
     highlight: true,
   },
   {

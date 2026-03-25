@@ -18,6 +18,20 @@ const steps = [
   },
 ];
 
+const marqueeVariants = {
+  animate: {
+    x: ["0%", "-50%"],
+    transition: {
+      x: {
+        repeat: Infinity,
+        repeatType: "loop" as const,
+        duration: 20,
+        ease: "linear",
+      },
+    },
+  },
+};
+
 const HowItWorksSection = () => {
   return (
     <section id="como-funciona" className="bg-background py-20 md:py-28 px-6">
@@ -30,31 +44,35 @@ const HowItWorksSection = () => {
         >
           Como gerar um contrato completo com a Contract.fy
         </motion.h2>
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
-          {steps.map((step, i) => (
-            <motion.div
+      {/* Conveyor belt / marquee */}
+      <div className="overflow-hidden py-4">
+        <motion.div
+          variants={marqueeVariants}
+          animate="animate"
+          className="flex gap-10 w-max"
+        >
+          {/* Duplicate steps for seamless loop */}
+          {[...steps, ...steps].map((step, i) => (
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="text-center"
+              className="text-center min-w-[280px] max-w-[320px] flex-shrink-0 bg-card rounded-lg p-8 border border-border shadow-md"
             >
               <div className="w-14 h-14 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center mx-auto mb-5">
                 <span className="font-display text-xl font-bold text-gold">{step.num}</span>
               </div>
               <h3 className="font-display text-lg font-semibold text-foreground mb-3">{step.title}</h3>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
+      </div>
 
-        <div className="text-center mt-12">
-          <a href="#testar" className="font-body text-sm text-cta font-semibold hover:underline">
-            Veja um exemplo de contrato gerado em menos de 3 minutos →
-          </a>
-        </div>
+      <div className="text-center mt-12">
+        <a href="#testar" className="font-body text-sm text-cta font-semibold hover:underline">
+          Veja um exemplo de contrato gerado em menos de 3 minutos →
+        </a>
       </div>
     </section>
   );
