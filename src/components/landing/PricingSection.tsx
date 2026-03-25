@@ -5,7 +5,7 @@ const plans = [
   {
     name: "Teste Free",
     desc: "Experimente sem compromisso",
-    price: "Grátis",
+    price: "Free",
     features: ["1 usuário", "3 contratos básicos", "Válido por 7 dias"],
     highlight: false,
   },
