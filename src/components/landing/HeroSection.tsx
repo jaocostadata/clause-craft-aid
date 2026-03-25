@@ -20,9 +20,6 @@ const HeroSection = () => {
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-foreground leading-tight mb-6">
               Contratos prontos em minutos, com segurança de horas de escritório.
             </h1>
-            <p className="font-body text-navy-foreground text-base md:text-lg mb-4 leading-relaxed font-semibold">
-              A Contract.fy automatiza a criação de contratos para advogados, reduzindo erros, padronizando cláusulas e liberando seu tempo para o que realmente importa: atender seus clientes.
-            </p>
             <p className="font-body text-navy-foreground/70 text-base md:text-lg mb-8 leading-relaxed">
               A Contract.fy automatiza a criação de contratos para advogados, reduzindo erros, padronizando cláusulas e liberando seu tempo para o que realmente importa: atender seus clientes.
             </p>

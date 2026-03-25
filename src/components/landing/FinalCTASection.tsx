@@ -13,7 +13,7 @@ const FinalCTASection = () => {
           viewport={{ once: true }}
           className="font-display text-2xl md:text-4xl font-bold text-navy-foreground leading-tight mb-6"
         >
-          Advogado, a ferramenta que você sempre quis agora está no seu bolso e a dois cliques de distância de você.
+          Advogado, a ferramenta que você sempre quis agora está no seu bolso e a dois cliques de distância.
         </motion.h2>
         <p className="font-body text-navy-foreground/70 mb-10 text-base md:text-lg">
           Leve a automação para dentro do seu escritório sem perder o controle jurídico de cada cláusula.
