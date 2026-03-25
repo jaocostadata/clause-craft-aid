@@ -58,8 +58,8 @@ const PricingSection = () => {
               transition={{ delay: i * 0.1 }}
               className={`rounded-lg p-6 md:p-8 flex flex-col ${
                 plan.highlight
-                  ? "bg-card border-2 border-cta shadow-lg relative"
-                  : "bg-card border border-border shadow-sm"
+                  ? "bg-card border-2 border-cta shadow-xl relative"
+                  : "bg-card border border-border shadow-md"
               }`}
             >
               {plan.highlight && (

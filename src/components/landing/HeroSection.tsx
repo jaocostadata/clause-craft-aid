@@ -47,12 +47,6 @@ const HeroSection = () => {
               >
                 Testar grátis por 7 dias
               </a>
-              <a
-                href="#como-funciona"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-md border-2 border-gold text-gold font-body font-semibold text-base hover:bg-gold/10 transition-colors"
-              >
-                Ver demonstração
-              </a>
             </div>
             <p className="mt-4 text-navy-foreground/50 font-body text-xs">
               Cancele quando quiser.

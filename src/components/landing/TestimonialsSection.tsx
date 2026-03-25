@@ -43,7 +43,7 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-card rounded-lg p-6 shadow-sm border border-gold/10"
+              className="bg-card rounded-lg p-6 shadow-lg border border-gold/20"
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, j) => (
