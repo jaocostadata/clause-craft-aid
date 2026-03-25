@@ -25,7 +25,7 @@ const marqueeVariants = {
       x: {
         repeat: Infinity,
         repeatType: "loop" as const,
-        duration: 20,
+        duration: 25,
         ease: "linear",
       },
     },
@@ -46,23 +46,22 @@ const HowItWorksSection = () => {
         </motion.h2>
       </div>
 
-      {/* Conveyor belt / marquee */}
+      {/* Clean marquee without boxes */}
       <div className="overflow-hidden py-4">
         <motion.div
           variants={marqueeVariants}
           animate="animate"
-          className="flex gap-10 w-max"
+          className="flex gap-16 w-max items-start"
         >
-          {/* Duplicate steps for seamless loop */}
           {[...steps, ...steps].map((step, i) => (
             <div
               key={i}
-              className="text-center min-w-[280px] max-w-[320px] flex-shrink-0 bg-card rounded-lg p-8 border border-border shadow-md"
+              className="text-center min-w-[260px] max-w-[300px] flex-shrink-0 px-4"
             >
-              <div className="w-14 h-14 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center mx-auto mb-5">
-                <span className="font-display text-xl font-bold text-gold">{step.num}</span>
+              <div className="w-12 h-12 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center mx-auto mb-4">
+                <span className="font-display text-lg font-bold text-gold">{step.num}</span>
               </div>
-              <h3 className="font-display text-lg font-semibold text-foreground mb-3">{step.title}</h3>
+              <h3 className="font-display text-lg font-semibold text-foreground mb-2">{step.title}</h3>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
             </div>
           ))}

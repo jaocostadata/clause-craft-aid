@@ -32,19 +32,19 @@ const SecuritySection = () => {
           Segurança jurídica e tecnológica em primeiro lugar
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="text-center"
+              transition={{ delay: i * 0.12, duration: 0.5, type: "spring", stiffness: 120, damping: 14 }}
+              whileHover={{ y: -8, scale: 1.03, rotateY: 4, rotateX: -2 }}
+              className="bg-card rounded-lg p-6 border-2 border-gold/30 shadow-lg hover:shadow-2xl hover:border-gold/80 transition-all duration-500 ease-out"
+              style={{ perspective: 800, transformStyle: "preserve-3d" }}
             >
-              <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
-                <item.icon className="text-gold" size={28} />
-              </div>
+              <item.icon className="text-gold mb-4" size={32} />
               <h3 className="font-display text-lg font-semibold text-foreground mb-2">{item.title}</h3>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
             </motion.div>
