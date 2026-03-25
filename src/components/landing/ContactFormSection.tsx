@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
 const ContactFormSection = () => {
@@ -13,7 +14,6 @@ const ContactFormSection = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate submission
     setTimeout(() => {
       setLoading(false);
       toast({
@@ -33,10 +33,10 @@ const ContactFormSection = () => {
           viewport={{ once: true }}
           className="font-display text-2xl md:text-4xl font-bold text-foreground text-center mb-4"
         >
-          Fale conosco
+          Tem dúvidas antes de assinar? Fale com um especialista.
         </motion.h2>
         <p className="font-body text-muted-foreground text-center mb-10 text-sm">
-          Preencha o formulário abaixo e nossa equipe entrará em contato.
+          Preencha o formulário e nossa equipe entrará em contato rapidamente.
         </p>
 
         <motion.form
@@ -44,57 +44,46 @@ const ContactFormSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           onSubmit={handleSubmit}
-          className="bg-card border border-border rounded-lg p-6 md:p-8 space-y-5 shadow-sm"
+          className="bg-card border border-border rounded-lg p-6 md:p-8 space-y-5 shadow-lg"
         >
           <div className="space-y-2">
             <Label htmlFor="name" className="font-body text-sm font-medium text-foreground">
               Nome completo <span className="text-cta">*</span>
             </Label>
-            <Input
-              id="name"
-              name="name"
-              required
-              placeholder="Seu nome completo"
-              className="font-body"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="whatsapp" className="font-body text-sm font-medium text-foreground">
-              WhatsApp <span className="text-cta">*</span>
-            </Label>
-            <Input
-              id="whatsapp"
-              name="whatsapp"
-              type="tel"
-              required
-              placeholder="(00) 00000-0000"
-              className="font-body"
-            />
+            <Input id="name" name="name" required placeholder="Seu nome completo" className="font-body" />
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="email" className="font-body text-sm font-medium text-foreground">
               E-mail <span className="text-cta">*</span>
             </Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              required
-              placeholder="seu@email.com"
-              className="font-body"
-            />
+            <Input id="email" name="email" type="email" required placeholder="seu@email.com" className="font-body" />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="profile" className="font-body text-sm font-medium text-foreground">
+              Qual é o seu perfil? <span className="text-cta">*</span>
+            </Label>
+            <Select name="profile" required>
+              <SelectTrigger className="font-body">
+                <SelectValue placeholder="Selecione seu perfil" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="autonomo">Advogado autônomo</SelectItem>
+                <SelectItem value="escritorio">Pequeno escritório</SelectItem>
+                <SelectItem value="departamento">Departamento jurídico</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="message" className="font-body text-sm font-medium text-foreground">
-              Mensagem adicional <span className="text-muted-foreground font-normal">(opcional)</span>
+              Mensagem <span className="text-muted-foreground font-normal">(opcional)</span>
             </Label>
             <Textarea
               id="message"
               name="message"
-              placeholder="Escreva sua mensagem aqui..."
+              placeholder="Escreva sua dúvida ou mensagem..."
               className="font-body"
               rows={4}
             />

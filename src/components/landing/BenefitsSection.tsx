@@ -68,6 +68,9 @@ const BenefitsSection = () => {
               <span className="font-display text-5xl md:text-6xl font-bold text-gold">+50</span>
               <p className="font-body text-sm text-navy-foreground/70 mt-2">modelos prontos para personalizar</p>
             </div>
+            <p className="font-body text-xs text-navy-foreground/40 text-center mt-1">
+              Baseado em dados reportados pelos primeiros usuários da plataforma.
+            </p>
           </motion.div>
         </div>
       </div>

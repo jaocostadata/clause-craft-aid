@@ -3,11 +3,13 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Teste Free",
+    name: "Free",
     desc: "Experimente sem compromisso",
     price: "Free",
     features: ["1 usuário", "3 contratos básicos", "Válido por 7 dias"],
     highlight: false,
+    btnText: "Criar conta grátis",
+    showTrialNote: false,
   },
   {
     name: "Pro",
@@ -15,6 +17,8 @@ const plans = [
     price: "R$ 47/mês",
     features: ["1 usuário", "50 contratos por mês", "Todos os modelos", "Exportação PDF e Word"],
     highlight: false,
+    btnText: "Começar teste grátis",
+    showTrialNote: true,
   },
   {
     name: "Escritório",
@@ -22,6 +26,8 @@ const plans = [
     price: "R$ 297/mês",
     features: ["Até 5 usuários", "400 contratos por mês", "Todos os modelos", "Suporte prioritário"],
     highlight: true,
+    btnText: "Começar teste grátis",
+    showTrialNote: true,
   },
   {
     name: "Corporativo",
@@ -29,6 +35,8 @@ const plans = [
     price: "Sob consulta",
     features: ["Usuários ilimitados", "Integrações sob demanda", "Atendimento dedicado"],
     highlight: false,
+    btnText: "Falar com especialista",
+    showTrialNote: false,
   },
 ];
 
@@ -59,7 +67,7 @@ const PricingSection = () => {
               className={`rounded-lg p-6 md:p-8 flex flex-col ${
                 plan.highlight
                   ? "bg-card border-2 border-cta shadow-xl relative"
-                  : "bg-card border border-border shadow-md"
+                  : "bg-card border border-border shadow-lg"
               }`}
             >
               {plan.highlight && (
@@ -80,14 +88,19 @@ const PricingSection = () => {
               </ul>
               <a
                 href={plan.price === "Sob consulta" ? "#contato" : "#testar"}
-                className={`w-full text-center py-3 rounded-md font-body font-semibold text-sm transition-opacity hover:opacity-90 ${
+                className={`w-full text-center py-3 rounded-md font-body font-semibold text-sm transition-opacity hover:opacity-90 block ${
                   plan.highlight
                     ? "bg-cta text-cta-foreground"
                     : "bg-navy text-navy-foreground"
                 }`}
               >
-                {plan.price === "Sob consulta" ? "Falar com especialista" : "Começar teste grátis"}
+                {plan.btnText}
               </a>
+              {plan.showTrialNote && (
+                <p className="font-body text-xs text-muted-foreground text-center mt-2">
+                  7 dias grátis, sem cartão de crédito.
+                </p>
+              )}
             </motion.div>
           ))}
         </div>
