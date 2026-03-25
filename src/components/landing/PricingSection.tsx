@@ -12,7 +12,7 @@ const plans = [
   {
     name: "Pro",
     desc: "Para advogados autônomos",
-    price: "R$ 37/mês",
+    price: "R$ 47/mês",
     features: ["1 usuário", "50 contratos por mês", "Todos os modelos", "Exportação PDF e Word"],
     highlight: false,
   },
