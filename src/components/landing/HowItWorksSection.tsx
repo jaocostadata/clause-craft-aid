@@ -46,7 +46,7 @@ const HowItWorksSection = () => {
     setActiveStep((prev) => (prev + dir + steps.length) % steps.length);
   }, []);
 
-  // Auto-advance when paused on a step
+  // Auto-resume after pause
   useEffect(() => {
     if (!isPaused) return;
     const timer = setTimeout(() => setIsPaused(false), 5000);

@@ -17,12 +17,12 @@ const HeroSection = () => {
             transition={{ duration: 0.7 }}
             className="max-w-2xl"
           >
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-foreground leading-tight mb-6">
+            <p className="font-body text-navy-foreground/70 text-base md:text-lg mb-6 leading-relaxed">
+              Advogado, a ferramenta que você sempre quis agora está no seu bolso e a dois cliques de distância de você.
+            </p>
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-foreground leading-tight mb-8">
               Contratos prontos em minutos, com segurança de horas de escritório.
             </h1>
-            <p className="font-body text-navy-foreground/70 text-base md:text-lg mb-8 leading-relaxed">
-              A Contract.fy automatiza a criação de contratos para advogados, reduzindo erros, padronizando cláusulas e liberando seu tempo para o que realmente importa: atender seus clientes.
-            </p>
 
             {/* Bullets */}
             <ul className="space-y-3 mb-10">
@@ -39,7 +39,7 @@ const HeroSection = () => {
               ))}
             </ul>
 
-            {/* CTAs */}
+            {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#testar"
@@ -54,22 +54,41 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Right mockup */}
+        {/* Right mockup with animation */}
         <div className="lg:col-span-2 bg-light-gray flex items-center justify-center p-8 md:p-12">
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-full max-w-md"
-          >
-            <img
-              src={heroMockup}
-              alt="Contract.fy aplicação em notebook e celular"
-              width={1024}
-              height={768}
-              className="w-full h-auto rounded-lg shadow-2xl"
-            />
-          </motion.div>
+          <div className="w-full max-w-md relative">
+            {/* Notebook — lid opening animation */}
+            <motion.div
+              initial={{ opacity: 0, rotateX: -60 }}
+              animate={{ opacity: 1, rotateX: 0 }}
+              transition={{ duration: 1.2, delay: 0.3, type: "spring", stiffness: 60, damping: 18 }}
+              style={{ perspective: 1200, transformOrigin: "bottom center" }}
+            >
+              <img
+                src={heroMockup}
+                alt="Contract.fy aplicação em notebook e celular"
+                width={1024}
+                height={768}
+                className="w-full h-auto rounded-lg shadow-2xl"
+              />
+            </motion.div>
+
+            {/* Phone overlay — rotates into view */}
+            <motion.div
+              initial={{ opacity: 0, x: 80, rotateY: 45, scale: 0.7 }}
+              animate={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
+              transition={{ duration: 1.4, delay: 0.8, type: "spring", stiffness: 50, damping: 16 }}
+              className="absolute -bottom-4 -right-4 w-24 md:w-32 bg-navy rounded-xl shadow-2xl border-2 border-gold/30 overflow-hidden"
+              style={{ perspective: 800 }}
+            >
+              <div className="w-full aspect-[9/16] bg-gradient-to-b from-navy via-navy to-background flex flex-col items-center justify-center p-2">
+                <span className="font-display text-[8px] md:text-[10px] font-bold text-gold">Contract<span className="text-cta">.</span>fy</span>
+                <div className="mt-1 w-3/4 h-[2px] bg-gold/30 rounded" />
+                <div className="mt-1 w-1/2 h-[2px] bg-gold/20 rounded" />
+                <div className="mt-1 w-2/3 h-[2px] bg-gold/15 rounded" />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
 

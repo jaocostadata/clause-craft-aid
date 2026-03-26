@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogIn } from "lucide-react";
 
 const navLinks = [
   { label: "Como funciona", href: "#como-funciona" },
@@ -12,13 +12,17 @@ const navLinks = [
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
-      {/* Main header */}
       <header className="sticky top-0 z-50 bg-navy border-b border-gold/20">
         <div className="container mx-auto flex items-center justify-between py-3 px-4">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          {/* Logo — scrolls to top */}
+          <a href="#" onClick={scrollToTop} className="flex items-center gap-2">
             <span className="font-display text-xl md:text-2xl font-bold text-gold">
               Contract<span className="text-cta">.</span>fy
             </span>
@@ -37,13 +41,14 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA */}
+          {/* Sign in / Sign up */}
           <div className="hidden lg:block">
             <a
               href="#testar"
-              className="inline-flex items-center px-6 py-2.5 rounded-md bg-cta text-cta-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md bg-cta text-cta-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity"
             >
-              Testar grátis por 7 dias
+              <LogIn size={16} />
+              Sign in / Sign up
             </a>
           </div>
 
@@ -73,10 +78,11 @@ const Header = () => {
               ))}
               <a
                 href="#testar"
-                className="mt-2 w-full text-center py-3 rounded-md bg-cta text-cta-foreground font-body font-semibold text-sm"
+                className="mt-2 w-full text-center py-3 rounded-md bg-cta text-cta-foreground font-body font-semibold text-sm flex items-center justify-center gap-2"
                 onClick={() => setMobileOpen(false)}
               >
-                Testar grátis
+                <LogIn size={16} />
+                Sign in / Sign up
               </a>
             </nav>
           </div>

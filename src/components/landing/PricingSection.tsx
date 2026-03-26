@@ -3,13 +3,14 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Free",
-    desc: "Experimente sem compromisso",
-    price: "Free",
-    features: ["1 usuário", "3 contratos básicos", "Válido por 7 dias"],
+    name: "Plus",
+    desc: "Para começar com eficiência",
+    price: "R$ 37/mês",
+    features: ["1 usuário", "20 contratos por mês", "Modelos básicos", "Exportação PDF e Word"],
     highlight: false,
-    btnText: "Criar conta grátis",
-    showTrialNote: false,
+    btnText: "Começar teste grátis",
+    btnHref: "#testar",
+    showTrialNote: true,
   },
   {
     name: "Pro",
@@ -18,15 +19,23 @@ const plans = [
     features: ["1 usuário", "50 contratos por mês", "Todos os modelos", "Exportação PDF e Word"],
     highlight: false,
     btnText: "Começar teste grátis",
+    btnHref: "#testar",
     showTrialNote: true,
   },
   {
     name: "Escritório",
     desc: "Para pequenos e médios escritórios",
     price: "R$ 297/mês",
-    features: ["Até 5 usuários", "400 contratos por mês", "Todos os modelos", "Suporte prioritário"],
+    features: [
+      "5 usuários inclusos",
+      "300 contratos por mês",
+      "Todos os modelos",
+      "Acesso antecipado a novidades",
+      "R$ 35 por usuário adicional",
+    ],
     highlight: true,
     btnText: "Começar teste grátis",
+    btnHref: "#testar",
     showTrialNote: true,
   },
   {
@@ -36,6 +45,7 @@ const plans = [
     features: ["Usuários ilimitados", "Integrações sob demanda", "Atendimento dedicado"],
     highlight: false,
     btnText: "Falar com especialista",
+    btnHref: "#contato",
     showTrialNote: false,
   },
 ];
@@ -53,7 +63,7 @@ const PricingSection = () => {
           Planos simples para qualquer tamanho de escritório
         </motion.h2>
         <p className="font-body text-muted-foreground text-center mb-14 text-sm">
-          Comece gratuitamente e escale conforme sua necessidade.
+          Escale conforme sua necessidade.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -87,8 +97,8 @@ const PricingSection = () => {
                 ))}
               </ul>
               <a
-                href={plan.price === "Sob consulta" ? "#contato" : "#testar"}
-                className={`w-full text-center py-3 rounded-md font-body font-semibold text-sm transition-opacity hover:opacity-90 block ${
+                href={plan.btnHref}
+                className={`w-full text-center py-3 rounded-md font-body font-semibold text-sm transition-opacity hover:opacity-90 block mt-auto ${
                   plan.highlight
                     ? "bg-cta text-cta-foreground"
                     : "bg-navy text-navy-foreground"
