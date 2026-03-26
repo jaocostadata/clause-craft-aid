@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { User, Users, Building2 } from "lucide-react";
+import { User, Users, Building2, Landmark } from "lucide-react";
 
 const cards = [
   {
@@ -9,11 +9,16 @@ const cards = [
   },
   {
     icon: Users,
-    title: "Pequenos escritórios",
+    title: "Escritórios de advocacia",
     desc: "Padronize modelos entre sócios e associados, evitando cláusulas desencontradas.",
   },
   {
     icon: Building2,
+    title: "Grandes escritórios",
+    desc: "Gerencie alto volume de contratos com templates aprovados e controle de qualidade centralizado.",
+  },
+  {
+    icon: Landmark,
     title: "Departamentos jurídicos",
     desc: "Acelere a revisão de contratos recorrentes com templates aprovados pela diretoria.",
   },
@@ -32,7 +37,7 @@ const AudienceSection = () => {
           Feita sob medida para profissionais do Direito
         </motion.h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, i) => (
             <motion.div
               key={i}
@@ -41,9 +46,7 @@ const AudienceSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.5, type: "spring", stiffness: 120, damping: 14 }}
               whileHover={{ y: -8, scale: 1.03, rotateY: 4, rotateX: -2 }}
-              className={`bg-card rounded-lg p-6 border-2 border-gold/30 shadow-lg hover:shadow-2xl hover:border-gold/80 transition-all duration-500 ease-out ${
-                i === 2 ? "sm:col-span-2 lg:col-span-1 sm:max-w-sm sm:mx-auto lg:max-w-none" : ""
-              }`}
+              className="bg-card rounded-lg p-6 border-2 border-gold/30 shadow-lg hover:shadow-2xl hover:border-gold/80 transition-all duration-500 ease-out"
               style={{ perspective: 800, transformStyle: "preserve-3d" }}
             >
               <card.icon className="text-gold mb-4" size={32} />

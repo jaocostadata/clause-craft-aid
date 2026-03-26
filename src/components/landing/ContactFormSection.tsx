@@ -69,8 +69,12 @@ const ContactFormSection = () => {
                 <SelectValue placeholder="Selecione seu perfil" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="autonomo">Advogado autônomo</SelectItem>
-                <SelectItem value="escritorio">Pequeno escritório</SelectItem>
+                <SelectItem value="autonomo-pequeno">Advogado autônomo — pequeno porte</SelectItem>
+                <SelectItem value="autonomo-medio">Advogado autônomo — médio porte</SelectItem>
+                <SelectItem value="autonomo-grande">Advogado autônomo — grande porte</SelectItem>
+                <SelectItem value="escritorio-pequeno">Escritório — pequeno porte</SelectItem>
+                <SelectItem value="escritorio-medio">Escritório — médio porte</SelectItem>
+                <SelectItem value="escritorio-grande">Escritório — grande porte</SelectItem>
                 <SelectItem value="departamento">Departamento jurídico</SelectItem>
               </SelectContent>
             </Select>
