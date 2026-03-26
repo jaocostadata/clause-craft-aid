@@ -5,8 +5,6 @@ import heroMockup from "@/assets/hero-mockup-app.jpg";
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
-      {/* Gold line top */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
 
       <div className="grid lg:grid-cols-5">
         {/* Left content */}
