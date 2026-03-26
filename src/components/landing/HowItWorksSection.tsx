@@ -40,11 +40,19 @@ const marqueeVariants = {
 const HowItWorksSection = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const goTo = useCallback((dir: number) => {
+    if (!hasInteracted) {
+      // First interaction always shows step 1
+      setIsPaused(true);
+      setActiveStep(0);
+      setHasInteracted(true);
+      return;
+    }
     setIsPaused(true);
     setActiveStep((prev) => (prev + dir + steps.length) % steps.length);
-  }, []);
+  }, [hasInteracted]);
 
   // Auto-resume after pause
   useEffect(() => {
