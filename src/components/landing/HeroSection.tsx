@@ -5,8 +5,6 @@ import heroMockup from "@/assets/hero-mockup-app.jpg";
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
-      {/* Gold line top */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
 
       <div className="grid lg:grid-cols-5">
         {/* Left content */}
@@ -59,8 +57,9 @@ const HeroSection = () => {
           <div className="w-full max-w-md relative">
             {/* Notebook — lid opening animation */}
             <motion.div
-              initial={{ opacity: 0, rotateX: -60 }}
-              animate={{ opacity: 1, rotateX: 0 }}
+              initial={{ opacity: 0, y: 60, rotateX: -40 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1.2, delay: 0.3, type: "spring", stiffness: 60, damping: 18 }}
               style={{ perspective: 1200, transformOrigin: "bottom center" }}
             >
@@ -75,8 +74,9 @@ const HeroSection = () => {
 
             {/* Phone overlay — rotates into view */}
             <motion.div
-              initial={{ opacity: 0, x: 80, rotateY: 45, scale: 0.7 }}
-              animate={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
+              initial={{ opacity: 0, x: 80, y: 40, rotateY: 45, scale: 0.7 }}
+              whileInView={{ opacity: 1, x: 0, y: 0, rotateY: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1.4, delay: 0.8, type: "spring", stiffness: 50, damping: 16 }}
               className="absolute -bottom-4 -right-4 w-24 md:w-32 bg-navy rounded-xl shadow-2xl border-2 border-gold/30 overflow-hidden"
               style={{ perspective: 800 }}

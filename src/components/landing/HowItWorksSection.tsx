@@ -40,11 +40,19 @@ const marqueeVariants = {
 const HowItWorksSection = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const goTo = useCallback((dir: number) => {
+    if (!hasInteracted) {
+      // First interaction always shows step 1
+      setIsPaused(true);
+      setActiveStep(0);
+      setHasInteracted(true);
+      return;
+    }
     setIsPaused(true);
     setActiveStep((prev) => (prev + dir + steps.length) % steps.length);
-  }, []);
+  }, [hasInteracted]);
 
   // Auto-resume after pause
   useEffect(() => {
@@ -114,7 +122,16 @@ const HowItWorksSection = () => {
           {steps.map((_, i) => (
             <button
               key={i}
-              onClick={() => { setIsPaused(true); setActiveStep(i); }}
+              onClick={() => {
+                if (!hasInteracted) {
+                  setIsPaused(true);
+                  setActiveStep(0);
+                  setHasInteracted(true);
+                } else {
+                  setIsPaused(true);
+                  setActiveStep(i);
+                }
+              }}
               className={`w-2.5 h-2.5 rounded-full transition-colors ${
                 isPaused && activeStep === i ? "bg-gold" : "bg-border hover:bg-gold/50"
               }`}

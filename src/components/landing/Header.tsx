@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-navy border-b border-gold/20">
+      <header className="sticky top-0 z-50 bg-navy/90 backdrop-blur-sm border-b border-gold/20">
         <div className="container mx-auto flex items-center justify-between py-3 px-4">
           {/* Logo — scrolls to top */}
           <a href="#" onClick={scrollToTop} className="flex items-center gap-2">
