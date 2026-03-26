@@ -122,7 +122,16 @@ const HowItWorksSection = () => {
           {steps.map((_, i) => (
             <button
               key={i}
-              onClick={() => { setIsPaused(true); setActiveStep(i); }}
+              onClick={() => {
+                if (!hasInteracted) {
+                  setIsPaused(true);
+                  setActiveStep(0);
+                  setHasInteracted(true);
+                } else {
+                  setIsPaused(true);
+                  setActiveStep(i);
+                }
+              }}
               className={`w-2.5 h-2.5 rounded-full transition-colors ${
                 isPaused && activeStep === i ? "bg-gold" : "bg-border hover:bg-gold/50"
               }`}

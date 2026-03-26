@@ -74,8 +74,9 @@ const HeroSection = () => {
 
             {/* Phone overlay — rotates into view */}
             <motion.div
-              initial={{ opacity: 0, x: 80, rotateY: 45, scale: 0.7 }}
-              animate={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
+              initial={{ opacity: 0, x: 80, y: 40, rotateY: 45, scale: 0.7 }}
+              whileInView={{ opacity: 1, x: 0, y: 0, rotateY: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1.4, delay: 0.8, type: "spring", stiffness: 50, damping: 16 }}
               className="absolute -bottom-4 -right-4 w-24 md:w-32 bg-navy rounded-xl shadow-2xl border-2 border-gold/30 overflow-hidden"
               style={{ perspective: 800 }}
