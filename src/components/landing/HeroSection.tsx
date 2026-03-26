@@ -57,8 +57,9 @@ const HeroSection = () => {
           <div className="w-full max-w-md relative">
             {/* Notebook — lid opening animation */}
             <motion.div
-              initial={{ opacity: 0, rotateX: -60 }}
-              animate={{ opacity: 1, rotateX: 0 }}
+              initial={{ opacity: 0, y: 60, rotateX: -40 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1.2, delay: 0.3, type: "spring", stiffness: 60, damping: 18 }}
               style={{ perspective: 1200, transformOrigin: "bottom center" }}
             >
