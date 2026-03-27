@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import contractSeal from "@/assets/contract-seal.png";
 
 const FinalCTASection = () => {
   return (
@@ -16,9 +17,9 @@ const FinalCTASection = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="w-20 h-20 mx-auto mb-8 rounded-full bg-gold/10 border-2 border-gold/30 flex items-center justify-center"
+          className="w-20 h-20 mx-auto mb-8 flex items-center justify-center"
         >
-          <span className="font-display text-2xl font-bold text-gold">Cf</span>
+          <img src={contractSeal} alt="Contract.fy selo" className="w-20 h-20 object-contain" />
         </motion.div>
 
         <motion.h2
