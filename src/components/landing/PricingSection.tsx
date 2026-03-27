@@ -96,6 +96,11 @@ const PricingSection = () => {
                   </li>
                 ))}
               </ul>
+              {plan.showTrialNote && (
+                <p className="font-body text-xs text-muted-foreground text-center mb-2">
+                  7 dias grátis, sem cartão de crédito.
+                </p>
+              )}
               <a
                 href={plan.btnHref}
                 className={`w-full text-center py-3 rounded-md font-body font-semibold text-sm transition-opacity hover:opacity-90 block mt-auto ${
@@ -106,11 +111,6 @@ const PricingSection = () => {
               >
                 {plan.btnText}
               </a>
-              {plan.showTrialNote && (
-                <p className="font-body text-xs text-muted-foreground text-center mt-2">
-                  7 dias grátis, sem cartão de crédito.
-                </p>
-              )}
             </motion.div>
           ))}
         </div>
