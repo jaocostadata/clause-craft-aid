@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import contractSeal from "@/assets/contract-seal.png";
 
 const FinalCTASection = () => {
   return (
