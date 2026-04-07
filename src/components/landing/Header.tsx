@@ -25,9 +25,6 @@ const Header = () => {
           {/* Logo — scrolls to top */}
           <a href="#" onClick={scrollToTop} className="flex items-center gap-2">
             <img src={logoSvg} alt="Contract.fy logo" className="h-8 w-8" />
-            <span className="font-display text-xl md:text-2xl font-bold text-gold">
-              Contract<span className="text-cta">.</span>fy
-            </span>
           </a>
 
           {/* Desktop nav */}
