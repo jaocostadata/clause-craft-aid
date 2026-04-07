@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, LogIn } from "lucide-react";
+import logoSvg from "@/assets/logo.svg";
 
 const navLinks = [
   { label: "Como funciona", href: "#como-funciona" },
