@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, LogIn } from "lucide-react";
+import logoSvg from "@/assets/logo.svg";
 
 const navLinks = [
   { label: "Como funciona", href: "#como-funciona" },
@@ -23,6 +24,7 @@ const Header = () => {
         <div className="container mx-auto flex items-center justify-between py-3 px-4">
           {/* Logo — scrolls to top */}
           <a href="#" onClick={scrollToTop} className="flex items-center gap-2">
+            <img src={logoSvg} alt="Contract.fy logo" className="h-8 w-8" />
             <span className="font-display text-xl md:text-2xl font-bold text-gold">
               Contract<span className="text-cta">.</span>fy
             </span>
