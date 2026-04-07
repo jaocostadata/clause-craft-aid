@@ -23,9 +23,7 @@ const HeroEntrySection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-foreground mb-3">
-            Contract<span className="text-cta">.</span>fy
-          </h2>
+          <img src={logoSvg} alt="Contract.fy logo" className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-3" />
           <div className="w-16 h-[2px] bg-gold mx-auto mb-8" />
           <p className="font-display text-xl md:text-2xl lg:text-3xl text-navy-foreground/90 leading-relaxed mb-10">
             O futuro dos contratos jurídicos começa aqui.
