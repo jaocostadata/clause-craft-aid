@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import heroEntryBg from "@/assets/hero-entry-bg.jpg";
-import logoSvg from "@/assets/logo.svg";
 
 const HeroEntrySection = () => {
   return (
